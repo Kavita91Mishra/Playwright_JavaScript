@@ -27,8 +27,8 @@ export default defineConfig({
   
   //workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  //reporter: 'html',
-      reporter: [
+  reporter: 'html',
+     /* reporter: [
     ['playwright-smart-reporter', {
       outputFile: '../TestReport/NotesApp_Master_Report.html',
       historyFile: 'test-history.json',
@@ -49,7 +49,7 @@ export default defineConfig({
       retryFailureThreshold: 3,
       baselineRunId: 'main-branch-baseline', // optional
     }],
-  ],
+  ],*/
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -57,6 +57,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    headless: false,
   },
 
   /* Configure projects for major browsers */
